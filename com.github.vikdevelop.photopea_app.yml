@@ -10,7 +10,7 @@ finish-args:
   - --share=network
   - --filesystem=xdg-pictures
   - --filesystem=xdg-download
-  - --devices=dri
+  - --device=dri
 modules:
   - name: photopea_app
     buildsystem: simple
