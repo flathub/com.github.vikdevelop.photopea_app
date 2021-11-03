@@ -21,7 +21,7 @@ modules:
     - install -Dm644 -t /app/share/metainfo com.github.vikdevelop.photopea_app.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/vikdevelop/photopea_app/archive/refs/tags/1.1.4.1.tar.gz
-        sha256: ef2d6bbedf04b2689db23e8ec136147902b4f6b55bcf0d0cc41adb671edf3a6e
+        url: https://github.com/vikdevelop/photopea_app/archive/refs/tags/1.5.tar.gz
+        sha256: 583e0959d942168cd2d5784aea25d314ec379ed6560a0a78d2ca13843e25f5ba
       - type: file
         path: com.github.vikdevelop.photopea_app.metainfo.xml
