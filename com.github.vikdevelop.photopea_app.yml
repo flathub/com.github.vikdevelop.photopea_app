@@ -21,6 +21,6 @@ modules:
     sources:
       - type: archive
         url: https://github.com/vikdevelop/photopea_app/archive/refs/tags/1.5.tar.gz
-        sha256: 583e0959d942168cd2d5784aea25d314ec379ed6560a0a78d2ca13843e25f5ba
+        sha256: db1859c341a26477e4b57bb6b89f88712a27050913a93c463590a3c322a14938
       - type: file
         path: com.github.vikdevelop.photopea_app.metainfo.xml
