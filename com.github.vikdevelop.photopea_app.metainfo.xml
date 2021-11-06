@@ -39,7 +39,7 @@
         <release version="1.2" date="2021-11-06">
             <description>
                 <ul>
-                    <li>Updated metainfo file; Add App Category, edit description & add help link</li>
+                    <li>Updated metainfo file: added App Category, edited description and added help link</li>
                 </ul>
             </description>
         </release>
