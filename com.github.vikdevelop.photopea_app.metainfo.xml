@@ -36,6 +36,13 @@
     </categories>
     
     <releases>
+        <release version="2.0" date="2021-12-13">
+           <description>
+               <ul>
+                   <li>Edited max. resolution from 1920x1080 px to 3840x2160 px.</li>
+               </ul>
+            </description>
+        </release>
         <release version="1.2" date="2021-11-06">
             <description>
                 <ul>
