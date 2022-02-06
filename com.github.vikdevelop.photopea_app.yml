@@ -21,10 +21,8 @@ modules:
     - cd
     - install -Dm755 -t /app/share/applications com.github.vikdevelop.photopea_app.desktop
     - install -Dm644 -t /app/share/icons/hicolor/128x128/apps/ data/icons/com.github.vikdevelop.photopea_app.png
-    - install -Dm644 -t /app/share/metainfo com.github.vikdevelop.photopea_app.metainfo.xml
+    - install -Dm644 -t /app/share/metainfo data/com.github.vikdevelop.photopea_app.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/vikdevelop/photopea_app/archive/refs/tags/2.0.1.tar.gz
-        sha256: b12c15986db5cd773f93fab3df1db5ac2e9d2a5eed7fbd50087b2271b7acf32b
-      - type: file
-        path: com.github.vikdevelop.photopea_app.metainfo.xml
+        url: https://github.com/vikdevelop/photopea_app/archive/refs/tags/2.0.2.tar.gz
+        sha256: b3cf82831677d5c232a7533f5fc227918edcb4cac6340072e06a955bc4b704dc
