@@ -21,12 +21,12 @@ build-options:
     NPM_CONFIG_LOGLEVEL: info
     XDG_CACHE_HOME: /run/build/photopea_app/flatpak-node/cache
     npm_config_cache: /run/build/photopea_app/flatpak-node/npm-cache
-    #npm_config_offline: 'true'
+    npm_config_offline: 'true'
 modules:
   - name: photopea_app
     buildsystem: simple
     build-commands:
-    - yarn
+    - yarn --offline
     - mkdir build_photopea
     - yarn electron-packager build_photopea --platform=linux --arch=x64 --version=15.4.1
     - mkdir /app/main
