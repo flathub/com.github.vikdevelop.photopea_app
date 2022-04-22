@@ -39,7 +39,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/vikdevelop/photopea_app/archive/refs/tags/2.1.tar.gz
-        sha256: 5b39ebd98960465f9c93f5bd841eff9bdea8824a0f825e3e998c3231412aed93
+        sha256: dddb8cb9f2b310d25b3998d19b1b9a059692e832f54fbec092e616f0f7bb1dfa
 
       - type: script
         dest-filename: photopea.sh
