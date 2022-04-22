@@ -19,8 +19,8 @@ build-options:
   append-path: /usr/lib/sdk/node16/bin
   env:
     NPM_CONFIG_LOGLEVEL: info
-    XDG_CACHE_HOME: /run/build/electron-sample-app/flatpak-node/cache
-    npm_config_cache: /run/build/electron-sample-app/flatpak-node/npm-cache
+    XDG_CACHE_HOME: /run/build/photopea_app/flatpak-node/cache
+    npm_config_cache: /run/build/photopea_app/flatpak-node/npm-cache
     npm_config_offline: 'true'
 modules:
   - name: photopea_app
