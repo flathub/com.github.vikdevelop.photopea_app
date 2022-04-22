@@ -25,6 +25,7 @@ build-options:
 modules:
   - name: photopea_app
     buildsystem: simple
+    subdir: main
     build-commands:
     - yarn --offline
     - mkdir build_photopea
