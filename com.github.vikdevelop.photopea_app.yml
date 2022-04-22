@@ -1,28 +1,48 @@
 app-id: com.github.vikdevelop.photopea_app
-runtime: org.gnome.Platform
-runtime-version: '42'
-sdk: org.gnome.Sdk
-command: photopea_app
+runtime: org.freedesktop.Platform
+runtime-version: '21.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: "21.08"
+command: photopea.sh
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.node16
+command: photopea.sh
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
   - --socket=wayland
   - --share=network
-  - --filesystem=home
+  - --filesystem=xdg-download
   - --device=dri
+build-options:
+  append-path: /usr/lib/sdk/node16/bin
+  env:
+    NPM_CONFIG_LOGLEVEL: info
+    XDG_CACHE_HOME: /run/build/electron-sample-app/flatpak-node/cache
+    npm_config_cache: /run/build/electron-sample-app/flatpak-node/npm-cache
+    npm_config_offline: 'true'
 modules:
   - name: photopea_app
     buildsystem: simple
     build-commands:
-    - mkdir ./build
-    - cd ./build
-    - c++ photopea.cpp `pkg-config --cflags --libs gtk+-3.0 webkit2gtk-4.0` -o photopea_app
-    - install -Dm755 -t /app/bin ./photopea_app
-    - cd
+    - yarn --offline
+    - mkdir build_photopea
+    - yarn electron-packager build_photopea --platform=linux --arch=x64 --version=15.4.1
+    - cp -R build_photopea /app/main
+    - install -D -t /app/bin photopea.sh
     - install -Dm755 -t /app/share/applications com.github.vikdevelop.photopea_app.desktop
     - install -Dm644 -t /app/share/icons/hicolor/128x128/apps/ data/icons/com.github.vikdevelop.photopea_app.png
     - install -Dm644 -t /app/share/metainfo data/com.github.vikdevelop.photopea_app.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/vikdevelop/photopea_app/archive/refs/tags/2.0.2.tar.gz
-        sha256: b3cf82831677d5c232a7533f5fc227918edcb4cac6340072e06a955bc4b704dc
+        url: https://github.com/vikdevelop/photopea_app/archive/refs/tags/2.1.tar.gz
+        sha256: fb97ab5d0b238a73ab25def8e5e179f53b76349d80d157ac095f84f895d913f1
+
+      - type: script
+        dest-filename: photopea.sh
+        commands:
+          - zypak-wrapper.sh /app/main/photopea "$@"
+
+      - type: file
+        path: generated-sources.json
