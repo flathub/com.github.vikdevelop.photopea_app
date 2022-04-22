@@ -26,8 +26,7 @@ modules:
   - name: photopea_app
     buildsystem: simple
     build-commands:
-    #- yarn --offline
-    - yarn
+    - yarn --offline
     - mkdir build_photopea
     - yarn electron-packager build_photopea --platform=linux --arch=x64 --version=15.4.1
     - mkdir /app/main
