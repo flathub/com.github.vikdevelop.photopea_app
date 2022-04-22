@@ -25,11 +25,11 @@ build-options:
 modules:
   - name: photopea_app
     buildsystem: simple
-    subdir: main
     build-commands:
     - yarn --offline
     - mkdir build_photopea
     - yarn electron-packager build_photopea --platform=linux --arch=x64 --version=15.4.1
+    - mkdir /app/main
     - cp -R build_photopea /app/main
     - install -D -t /app/bin photopea.sh
     - install -Dm755 -t /app/share/applications com.github.vikdevelop.photopea_app.desktop
