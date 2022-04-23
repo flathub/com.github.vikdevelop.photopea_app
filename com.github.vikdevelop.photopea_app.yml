@@ -15,8 +15,6 @@ finish-args:
   - --share=network
   - --filesystem=xdg-download
   - --device=dri
-build-args:
-  - --share=network
 build-options:
   append-path: /usr/lib/sdk/node16/bin
   env:
@@ -27,6 +25,8 @@ modules:
     build-options:
         env:
           XDG_CACHE_HOME: /run/build/rhyme/flatpak-node/cache
+        build-args:
+        - --share=network
     build-commands:
     - yarn
     - mkdir build_photopea
