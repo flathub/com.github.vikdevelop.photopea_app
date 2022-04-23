@@ -24,7 +24,7 @@ modules:
     buildsystem: simple
     build-options:
         env:
-          XDG_CACHE_HOME: /run/build/rhyme/flatpak-node/cache
+          XDG_CACHE_HOME: /run/build/photopea/flatpak-node/cache
     build-commands:
     - yarn --offline
     - mkdir build_photopea
