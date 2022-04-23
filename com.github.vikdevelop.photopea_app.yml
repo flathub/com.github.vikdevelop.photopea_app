@@ -28,7 +28,7 @@ modules:
         build-args:
         - --share=network
     build-commands:
-    - yarn
+    - yarn --offline
     - mkdir build_photopea
     - yarn electron-packager ./ photopea --platform=linux --arch=x64 --electron-version=15.4.1 --out=build_photopea/
     - mkdir /app/main
@@ -45,3 +45,5 @@ modules:
         dest-filename: photopea.sh
         commands:
           - zypak-wrapper.sh /app/main/photopea "$@"
+      - type: file
+        path: generated-sources.json
