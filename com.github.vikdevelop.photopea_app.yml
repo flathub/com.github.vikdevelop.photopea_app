@@ -15,9 +15,9 @@ finish-args:
   - --share=network
   - --filesystem=xdg-download
   - --device=dri
-build-options:
-  build-args:
+build-args:
   - --share=network
+build-options:
   append-path: /usr/lib/sdk/node16/bin
   env:
     NPM_CONFIG_LOGLEVEL: info
