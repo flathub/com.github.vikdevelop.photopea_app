@@ -25,8 +25,6 @@ modules:
     build-options:
         env:
           XDG_CACHE_HOME: /run/build/rhyme/flatpak-node/cache
-        build-args:
-        - --share=network
     build-commands:
     - yarn --offline
     - mkdir build_photopea
