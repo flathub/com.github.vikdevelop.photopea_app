@@ -19,18 +19,20 @@ build-options:
   append-path: /usr/lib/sdk/node16/bin
   env:
     NPM_CONFIG_LOGLEVEL: info
-    XDG_CACHE_HOME: /run/build/photopea_app/flatpak-node/cache
-    npm_config_cache: /run/build/photopea_app/flatpak-node/npm-cache
-    npm_config_offline: 'true'
 modules:
   - name: photopea_app
     buildsystem: simple
+    build-options:
+        env:
+          XDG_CACHE_HOME: /run/build/rhyme/flatpak-node/cache
+        build-args:
+        - --share=network
     build-commands:
-    - yarn --offline
+    - yarn
     - mkdir build_photopea
-    - yarn electron-packager build_photopea --platform=linux --arch=x64 --version=15.4.1
+    - yarn electron-packager ./ photopea --platform=linux --arch=x64 --electron-version=15.4.1 --out=build_photopea/
     - mkdir /app/main
-    - cp -R build_photopea /app/main
+    - cp -R build_photopea/photopea-linux-x64/* /app/main
     - install -D -t /app/bin photopea.sh
     - install -Dm755 -t /app/share/applications com.github.vikdevelop.photopea_app.desktop
     - install -Dm644 -t /app/share/icons/hicolor/128x128/apps/ data/icons/com.github.vikdevelop.photopea_app.png
@@ -38,12 +40,8 @@ modules:
     sources:
       - type: archive
         url: https://github.com/vikdevelop/photopea_app/archive/refs/tags/2.1.tar.gz
-        sha256: dddb8cb9f2b310d25b3998d19b1b9a059692e832f54fbec092e616f0f7bb1dfa
-
+        sha256: 797b8cec4c134e2d7e18ee51fa7cd46e10d6877a6308d11dfaa2bd2c134c75a0
       - type: script
         dest-filename: photopea.sh
         commands:
           - zypak-wrapper.sh /app/main/photopea "$@"
-
-      - type: file
-        path: generated-sources.json
