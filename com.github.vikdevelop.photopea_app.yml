@@ -7,7 +7,6 @@ base-version: "21.08"
 command: photopea.sh
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.node16
-command: photopea.sh
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -26,25 +25,24 @@ modules:
         env:
           XDG_CACHE_HOME: /run/build/photopea/flatpak-node/cache
     build-commands:
-    - yarn --offline
-    - mkdir build_photopea
-    - yarn electron-packager ./ photopea --platform=linux --arch=x64 --electron-version=15.4.1 --out=build_photopea/
-    - mkdir /app/main
-    - cp -R build_photopea/photopea-linux-x64/* /app/main
     - install -D -t /app/bin photopea.sh
     - install -Dm755 -t /app/share/applications com.github.vikdevelop.photopea_app.desktop
     - install -Dm644 -t /app/share/icons/hicolor/128x128/apps/ data/icons/com.github.vikdevelop.photopea_app.png
     - install -Dm644 -t /app/share/metainfo data/com.github.vikdevelop.photopea_app.metainfo.xml
     sources:
-      - type: file
-        url: data:yarn-offline-mirror%20/run/build/photopea/flatpak-node/yarn-mirror%0A--install.offline%20true%0a--run.offline%20true%0A
-        dest-filename: .yarnrc
       - type: archive
-        url: https://github.com/vikdevelop/photopea_app/archive/refs/tags/2.1.tar.gz
-        sha256: 797b8cec4c134e2d7e18ee51fa7cd46e10d6877a6308d11dfaa2bd2c134c75a0
+        url: https://github.com/vikdevelop/photopea_app/archive/refs/tags/2.1.1.tar.gz
+        sha256: 34b71e501dc7f08e30ef0b5a14dc287cc44e94dfe3e7d3b88fda63cd8827a839
       - type: script
         dest-filename: photopea.sh
         commands:
           - zypak-wrapper.sh /app/main/photopea "$@"
-      - type: file
-        path: generated-sources.json
+  - name: build
+    buildsystem: simple
+    build-commands:
+      - mkdir /app/main
+      - cp -R * /app/main
+    sources:
+      - type: archive
+        url: https://github.com/vikdevelop/photopea_app/releases/download/2.1/photopea-build-electron-v2.0.tar.gz
+        sha256: 3ace04c1921d886252ea87569217aa1c84f597019947a4bb1dc5b56fa4fa7749
