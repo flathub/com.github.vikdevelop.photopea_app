@@ -1,12 +1,12 @@
 app-id: com.github.vikdevelop.photopea_app
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: "21.08"
+base-version: "22.08"
 command: photopea.sh
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.node16
+  - org.freedesktop.Sdk.Extension.node18
 finish-args:
   - --share=ipc
   - --socket=x11
@@ -14,7 +14,7 @@ finish-args:
   - --filesystem=xdg-download
   - --device=dri
 build-options:
-  append-path: /usr/lib/sdk/node16/bin
+  append-path: /usr/lib/sdk/node18/bin
   env:
     NPM_CONFIG_LOGLEVEL: info
 modules:
