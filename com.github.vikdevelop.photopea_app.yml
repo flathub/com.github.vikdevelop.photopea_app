@@ -32,8 +32,8 @@ modules:
     - install -Dm644 -t /app/share/metainfo resources/app/data/com.github.vikdevelop.photopea_app.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/vikdevelop/photopea_app/releases/download/2.4/photopea_build_electron-v2.4-Flatpak.tar.xz
-        sha256: 09a21715479b8b53ac46ca5633b96ebda49bbbd975b3d4d934c5328783ab423d
+        url: https://github.com/vikdevelop/photopea_app/releases/download/2.4_/photopea_build_electron-v2.4.zip
+        sha256: bcc94b29af95243d2e2f0ba76677981ca5510786d2e818ccb2fc6ea6301dfce2
       - type: script
         dest-filename: photopea.sh
         commands:
