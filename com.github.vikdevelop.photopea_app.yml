@@ -33,7 +33,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/vikdevelop/photopea_app/releases/download/2.3.6/photopea-electron_build_v2.3.6-Flatpak.tar.xz
-        sha256: 939e1ced59e59c9560ef84c63e41227a947eae48a4de1bf200fec53c5f442483
+        sha256: 0a91f59add8999d0e3c115c75eb09734fff3531d7bce8254a05469c19a850d98
       - type: script
         dest-filename: photopea.sh
         commands:
