@@ -1,9 +1,9 @@
 app-id: com.github.vikdevelop.photopea_app
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: "23.08"
+base-version: "24.08"
 command: photopea.sh
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.node18
@@ -32,8 +32,8 @@ modules:
     - install -Dm644 -t /app/share/metainfo resources/app/data/com.github.vikdevelop.photopea_app.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/vikdevelop/photopea_app/releases/download/2.3.7/photopea_build-electron-237.tar.xz
-        sha256: 6005d7ff34c3d485c8cf5c317a7c24aedc682f0afddaadb97f90f09429919f46
+        url: https://github.com/vikdevelop/photopea_app/releases/download/2.3.8/photopea_build-electron-238.tar.xz
+        sha256: 4574e6bf7cd1a9b9139a8109f60cca9f10e721752ac12268c17526cb321bf361
       - type: script
         dest-filename: photopea.sh
         commands:
