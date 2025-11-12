@@ -9,7 +9,8 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.node24
 finish-args:
   - --share=ipc
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --share=network
   - --filesystem=xdg-download
   - --device=dri
@@ -26,14 +27,14 @@ modules:
     build-commands:
     - install -D -t /app/bin photopea.sh
     - mkdir /app/main
-    - cp -R * /app/main
-    - install -Dm755 -t /app/share/applications resources/app/com.github.vikdevelop.photopea_app.desktop
-    - install -Dm644 -t /app/share/icons/hicolor/128x128/apps/ resources/app/data/icons/com.github.vikdevelop.photopea_app.png
-    - install -Dm644 -t /app/share/metainfo resources/app/data/com.github.vikdevelop.photopea_app.metainfo.xml
+    - cp -R build/photopea-linux-x64/* /app/main
+    - install -Dm755 -t /app/share/applications data/com.github.vikdevelop.photopea_app.desktop
+    - install -Dm644 -t /app/share/icons/hicolor/128x128/apps/ data/icons/com.github.vikdevelop.photopea_app.png
+    - install -Dm644 -t /app/share/metainfo data/com.github.vikdevelop.photopea_app.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/vikdevelop/photopea_app/releases/download/2.3.8/photopea_build-electron-238.tar.xz
-        sha256: 4574e6bf7cd1a9b9139a8109f60cca9f10e721752ac12268c17526cb321bf361
+        url: https://github.com/vikdevelop/photopea_app/releases/download/2.3.9/photopea_build-electron-239.tar.xz
+        sha256: e7351b1ff468fdbc5991b0d773057bed81e97461f19d2e86668814da736b30ea
       - type: script
         dest-filename: photopea.sh
         commands:
