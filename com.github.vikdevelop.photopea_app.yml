@@ -26,15 +26,15 @@ modules:
           XDG_CACHE_HOME: /run/build/photopea/flatpak-node/cache
     build-commands:
     - install -D -t /app/bin photopea.sh
-    - mkdir /app/main
-    - cp -R build/photopea-linux-x64/* /app/main
+    - mkdir -p /app/main
+    - cp -R * /app/main
     - install -Dm755 -t /app/share/applications data/com.github.vikdevelop.photopea_app.desktop
     - install -Dm644 -t /app/share/icons/hicolor/128x128/apps/ data/icons/com.github.vikdevelop.photopea_app.png
     - install -Dm644 -t /app/share/metainfo data/com.github.vikdevelop.photopea_app.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/vikdevelop/photopea_app/releases/download/2.4.0/photopea_build-electron-240-x64.tar.xz
-        sha256: 346e297ec3266d37164448c4ec7817395e31fd287b7e88c6597c6873ddf1beb9
+        url: https://github.com/vikdevelop/photopea_app/releases/download/2.4.1/photopea-build_electron_v241.tar.xz
+        sha256: 00dea703615b4072a1ba719b66467c43d1cc84e29862b89ba4ce44626427f7bd
       - type: script
         dest-filename: photopea.sh
         commands:
