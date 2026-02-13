@@ -27,7 +27,7 @@ modules:
     build-commands:
     - install -D -t /app/bin photopea.sh
     - mkdir /app/main
-    - cp -R main/* /app/main
+    - cp -R * /app/main
     - install -Dm755 -t /app/share/applications data/com.github.vikdevelop.photopea_app.desktop
     - install -Dm644 -t /app/share/icons/hicolor/128x128/apps/ data/icons/com.github.vikdevelop.photopea_app.png
     - install -Dm644 -t /app/share/metainfo data/com.github.vikdevelop.photopea_app.metainfo.xml
