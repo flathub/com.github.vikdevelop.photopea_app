@@ -1,3 +1,4 @@
 {
-  "only-arches": ["x86_64"]
+  "only-arches": ["x86_64"],
+  "end-of-life": "This is an unofficial wrapper and the project has been discontinued. Please use the official web version directly at https://photopea.com."
 }
